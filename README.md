@@ -6,7 +6,7 @@ It accepts a `string` which is the classname of the object to be created, and re
 
 ### Examples
 
-The following is an example of how it can be used to create an Instance tree, along with some other scripted behaviors, such as running code when created and connecting functions to signals:
+The following is an example of how it can be used to create an Instance tree, along with some other scripted behaviors, such as running code when created and connecting functions to signals.
 
 ```lua
 local model = Create"Model"{
@@ -26,7 +26,7 @@ local model = Create"Model"{
 }
 ```
 
-In addition to `Create`, the rewrite also adds a `Create.Set` function that allows you to modify an already existing Instance:
+In addition to `Create`, the rewrite also adds a `Create.Set` function that allows you to modify an already existing Instance.
 
 ```lua
 Create.Set(workspace.Baseplate){
@@ -36,10 +36,11 @@ Create.Set(workspace.Baseplate){
 ```
 It also returns the same Instance that was passed into it:
 ```lua
--- This is equivalent to Create"Part"
-local part = Create.Set(Instance.new"Part"){[...]}
+-- This is equivalent to Create"Part"{}
+-- Since there are no parameters given, this is also the same as Instance.new""
+local part = Create.Set(Instance.new"Part"){}
 ```
-Below is a more complex example of a part that changes color every second:
+Below is a more complex example of a part that changes color every second.
 ```lua
 local part = Create"Part"{
 	Size = Vector3.new(5,1,5),
@@ -72,7 +73,7 @@ On top of that, the rewrite provides alternate function names which are listed b
 	- `Create.E`,
 	- `Create.e`
 
-There are also **two** available versions of Create.
+There are also **two** available versions of Create:
 - `create-basic.lua` is a very *very* simplistic version of Create, which includes `set` as well. It serves as an alternative to those that don't need any of the function features. **None of the examples above apply to this, as it doesn't have any implementation for `[Create]=function` or `[Create.E"e"]=function`.**
 - `create.lua` is the main version that provides function features.
 
