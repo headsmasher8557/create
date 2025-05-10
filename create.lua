@@ -28,7 +28,7 @@ local function constructor(obj)
 			check(init, "function", "[Create] must be set to a {expected}, got {given}")
 			init(obj)
 		end
-		obj.Parent = dat.Parent
+		obj.Parent = dat.Parent or obj.Parent
 		return obj
 	end
 end
